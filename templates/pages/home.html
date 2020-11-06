@@ -4,11 +4,31 @@
 {% block title %}Home page{% endblock title %}
 
 {% block content %}
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1>Find a Company or add one by ticker</h1>
-  <form action="" method="post">
-    {% csrf_token %}
-    {{ company_form.as_p }}
-  </form>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+  <h1>Find a Company</h1>
+  <div class="row">
+    <form action="" method="post" class="col-6">
+      {% csrf_token %}
+      {{ company_form.as_p }}
+    </form>
+    <form action="" method="post" id="form-ticker-request" class="col-6 d-none">
+      {% csrf_token %}
+      <h2>Ticker Not in System</h2>
+      <div class="btn btn-secondary" id="ticker-request-toggle">
+        <i class="fas fa-plus-circle"></i> Add Company
+      </div>
+      <div id="ticker-request-form-partial" class="d-none">
+        <input
+        placeholder="Enter Ticker"
+        class="mx-1 mb-1"
+        id="ticker-request-input" />
+        <input
+        type="submit"
+        value="Submit"
+        class="btn btn-dark mx-1 mb-1"
+        id="ticker-request-submit" />
+      </div>
+    </form>
+  </div>
 </div>
 {% endblock content %}

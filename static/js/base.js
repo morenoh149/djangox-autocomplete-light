@@ -15,19 +15,42 @@ document.addEventListener('dal-init-function', function () {
                 delay: 250,
             },
             createTag: function(params) {
-                console.log('create tag');
-                // Don't offset to create a tag if there is no @ symbol
-                if (params.term.indexOf('@') === -1) {
-                    // Return null to disable tag creation
-                    return null;
-                }
-                
+                console.log('createTag', params);
                 return {
                     id: params.term,
-                    text: params.term
+                    text: params.term.toUpperCase(),
+                    isTag: true
                 }
             },
             tags: true,
+            // insertTag: function(data, tag) {
+            //     tag.text = "Add: " + tag.text;
+            //     // tag.isTag = true;
+            //     data.push(tag);
+            // },
+            // language: { 
+            //     noResults: function (event) {
+            //       var term = event.target.value;
+            //       return '<a href="#">add item ' + term + '</a>' 
+            //     },
+            //     escapeMarkup: function (markup) {
+            //           return markup;
+            //     }
+            //   }
+        });
+        $element.on("change:selecting", function(e) {
+            console.log('select');
+            if (e.params && e.params.data) {
+
+                var data = e.params.data;
+                var requestForm = document.querySelector('#form-ticker-request');
+                if (data.isTag) {
+                    console.log('local tag selected', data);
+                    requestForm.classList.remove('d-none');
+                } else {
+                    requestForm.classList.add('d-none');
+                }
+            }
         });
     });
   })
