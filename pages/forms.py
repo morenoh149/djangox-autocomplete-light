@@ -15,8 +15,8 @@ class CompanyForm(forms.ModelForm):
             "ticker": TickerWidget(
                 url="company-autocomplete",
                 attrs={
-                    "data-ajax-delay": "250",
-                    "data-tags": "true",
+                    # "data-ajax-delay": "250",
+                    # "data-tags": "true",
                 },
             )
         }
