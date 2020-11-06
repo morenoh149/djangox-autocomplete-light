@@ -1,4 +1,4 @@
-A demo of specifying a `createTag` callback to select 2
+A demo of specifying a `createTag` callback to select2
 https://select2.org/tagging#customizing-tag-creation
 
 using https://github.com/yourlabs/django-autocomplete-light
