@@ -12,7 +12,7 @@ class CompanyForm(forms.ModelForm):
         model = Company
         fields = ["ticker"]
         widgets = {
-            "email": TickerWidget(
+            "ticker": TickerWidget(
                 url="company-autocomplete",
                 attrs={
                     "data-ajax-delay": "250",

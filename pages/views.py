@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 from .forms import CompanyForm
 from .models import Company
 from dal import autocomplete
-
+from django.db.models import Q
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
@@ -14,11 +14,12 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
     template_name = 'pages/about.html'
 
+
 class CompanyAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         qs = Company.objects.all()
 
         if self.q:
-            qs = qs.filter(email__istartswith=self.q)
+            qs = qs.filter(Q(ticker__icontains=self.q) | Q(name__icontains=self.q))
 
         return qs
