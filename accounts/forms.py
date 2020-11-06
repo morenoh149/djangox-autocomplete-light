@@ -24,22 +24,3 @@ class PersonForm(forms.ModelForm):
     class Meta:
         model = CustomUser
         fields = ('email', 'username')
-
-class TickerWidget(autocomplete.ListSelect2):
-    autocomplete_function = "ticker_autocomplete_init"
-
-
-class CustomUserForm(forms.ModelForm):
-    class Meta:
-        model = CustomUser
-        fields = ["email"]
-        widgets = {
-            "email": TickerWidget(
-                url="custom-user-autocomplete",
-                attrs={
-                    "data-ajax-delay": "250",
-                    "required": True,
-                    "data-tags": "true",
-                },
-            )
-        }

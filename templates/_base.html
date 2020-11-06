@@ -28,14 +28,6 @@
     {% endblock content %}
   </div>
 
-  <footer class="footer">
-    <div class="container">
-      <span class="text-muted">Footer...</span>
-    </div>
-  </footer>
-
-
-
   {% block javascript %}
   <!-- Bootstrap JavaScript -->
   <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
@@ -43,7 +35,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <!-- 3rd party JavaScript -->
-  {{form.media}}
+  {{ company_form.media }}
 
   <!-- Project JS -->
   <script src="{% static 'js/base.js' %}"></script>

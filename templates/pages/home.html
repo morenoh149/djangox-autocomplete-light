@@ -5,10 +5,10 @@
 
 {% block content %}
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1>Find a Company or add one by ticker</h1>
   <form action="" method="post">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" />
+    {{ company_form.as_p }}
   </form>
 </div>
 {% endblock content %}
