@@ -13,3 +13,5 @@ see installation instructions there
 https://github.com/wsvincent/djangox#-installation
 
 Fixture data can be loaded by `$ ./manage.py loaddata fixtures.json`
+
+Roughly equivalent to this js fiddle https://jsfiddle.net/morenoh149/mf6Lxyc0/27/
