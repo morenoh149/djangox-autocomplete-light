@@ -38,7 +38,7 @@ document.addEventListener('dal-init-function', function () {
             //     }
             //   }
         });
-        $element.on("change:selecting", function(e) {
+        $element.on("select2:select", function(e) {
             console.log('select');
             if (e.params && e.params.data) {
 
